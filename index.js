@@ -47,8 +47,11 @@ app.use(express.json());
  *       200:
  *         description: Respuesta exitosa
  */
+// Ruta para recibir webhooks
 app.post('/webhook', (req, res) => {
+    // Imprimir el cuerpo de la solicitud en la consola
     console.log('Webhook recibido:', req.body);
+    // Responder con un mensaje de confirmación
     res.send('Webhook recibido');
 });
 
@@ -57,6 +60,7 @@ app.get('/', (req, res) => {
     res.send('Hola Mundo');
 });
 
+// Iniciar el servidor
 app.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`);
 });
